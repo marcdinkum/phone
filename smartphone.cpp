@@ -1,28 +1,35 @@
 #include <iostream>
 
-class Phone
+class Screen
 {
 public:
-  void dial_number(std::string number);
+  int glass;
+};
+
+
+class SmartPhone
+{
+public:
+  void dialNumber(std::string number);
   void call();
   void end_call();
   
 private:
-
+  Screen screen;
 };
 
 
-void Phone::dial_number(std::string number)
+void SmartPhone::dialNumber(std::string number)
 {
   std::cout << "Dialing " << number << std::endl;
 }
 
-void Phone::call()
+void SmartPhone::call()
 {
   std::cout << "Call starts" << std::endl;
 }
 
-void Phone::end_call()
+void SmartPhone::end_call()
 {
   std::cout << "Call ends" << std::endl;
 }
@@ -31,8 +38,8 @@ void Phone::end_call()
 
 int main()
 {
-  Phone nokia;
-  nokia.dial_number("0612345678");
+  SmartPhone nokia;
+  nokia.dialNumber("0612345678");
   nokia.call();
   nokia.end_call();
 
