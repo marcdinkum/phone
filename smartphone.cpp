@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Screen
 {
@@ -12,7 +13,8 @@ class SmartPhone
 public:
   void dialNumber(std::string number);
   void call();
-  void end_call();
+  void endCall();
+  void heySiri(std::string wakeUpNotice);
   
 private:
   Screen screen;
@@ -29,19 +31,23 @@ void SmartPhone::call()
   std::cout << "Call starts" << std::endl;
 }
 
-void SmartPhone::end_call()
+void SmartPhone::endCall()
 {
   std::cout << "Call ends" << std::endl;
 }
 
-
+void SmartPhone::heySiri(std::string wakeUpNotice)
+{
+  std::cout << "How can I help you?" << std::endl;
+}
 
 int main()
 {
   SmartPhone nokia;
   nokia.dialNumber("0612345678");
   nokia.call();
-  nokia.end_call();
+  nokia.endCall();
+  nokia.heySiri("Hello Siri");
 
   return 0;
 }
